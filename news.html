@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tin tức trường THPT</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+}
+
+
+header {
+    background-color: rgb(4, 175, 255);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+header .logo h1 {
+    font-size: 24px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+.marquee {
+    width: 100%;
+    overflow: hidden;
+    background-color: #0307d6;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.marquee p {
+    display: inline-block;
+    font-size: 16px;
+    font-weight: bold;
+    animation: marqueeScroll 15s linear infinite;
+}
+
+@keyframes marqueeScroll {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+
+.news-container {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 20px;
+    background: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.news-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.news-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.news-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    background: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.news-item img {
+    width: 120px;
+    height: 80px;
+    object-fit: cover;
+    margin-right: 15px;
+}
+
+.news-item h3 {
+    margin-bottom: 5px;
+}
+
+.news-item a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+.news-item a:hover {
+    text-decoration: underline;
+}
+
+
+footer {
+    text-align: center;
+    background: rgb(3, 196, 255);
+    color: white;
+    padding: 10px 0;
+    margin-top: 30px;
+}
+
+</style>
+<body>
+
+    <header>
+        <div class="logo">
+            <h1>THPT Luong Tai News </h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Trang chủ</a></li>
+                <li><a href="#">Giới thiệu</a></li>
+                
+                <li><a href="lienhe.html">Liên hệ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+ 
+    <div class="marquee">
+        <p>Tin mới: Lễ khai giảng năm học mới 2025 đã diễn ra thành công tốt đẹp! | Chúc mừng học sinh đạt giải trong kỳ thi học sinh giỏi quốc gia.</p>
+    </div>
+
+
+    <main>
+        <section class="news-container">
+            <h2>Tin tức mới nhất</h2>
+            <div class="news-list">
+                <article class="news-item">
+                    <img src="https://thptluongtai.bacninh.edu.vn/upload/63117/20240907/TranAn-09409_a714e.jpg" alt="Tin tức 1">
+                    <h3><a href="https://thptluongtai.bacninh.edu.vn/anh/khai-giang-nam-hoc-2024-20253.html">Lễ khai giảng năm học mới 2025</a></h3>
+                    <p>Buổi lễ khai giảng diễn ra long trọng với sự tham gia của nhiều đại biểu...</p>
+                </article>
+
+                <article class="news-item">
+                    <img src="https://thptluongtai.bacninh.edu.vn/upload/45610/fck/sgdbacninh/image(228).png" alt="Tin tức 2">
+                    <h3><a href="https://thptluongtai.bacninh.edu.vn/tin-tuc-su-kien/bac-ninh-dan-dau-toan-quoc-ve-ti-le-thi-sinh-dat-giai-hoc-sinh-gioi-quoc-gia-nam-hoc-2024-2025.html">Kỳ thi học sinh giỏi quốc gia</a></h3>
+                    <p>Trường THPT đạt thành tích xuất sắc trong kỳ thi học sinh giỏi cấp quốc gia...</p>
+                </article>
+                
+                <article class="news-item">
+                    <img src="https://thptluongtai.bacninh.edu.vn/upload/45610/fck/sgdbacninh/2024_03_14_07_16_161.jpg" alt="Tin tức 3">
+                    <h3><a href="https://thptluongtai.bacninh.edu.vn/tin-tuc-su-kien/hoi-nghi-ra-soat-dam-bao-hieu-qua-mo-hinh-cong-truong-an-toan-giao-thong-tren-dia-ban-thanh-pho-bac-ninh.html">Hội nghị về các vấn đề xã hội</a></h3>
+                    <p>Hội nghị rà soát việc thực hiện an toàn giao thông ở các trường học...</p>
+                </article>
+                
+                <article class="news-item">
+                    <img src="https://thptluongtai.bacninh.edu.vn/upload/45610/fck/sgdbacninh/2024_03_14_07_16_161.jpg" alt="Tin tức 3">
+                    <h3><a href="https://thptluongtai.bacninh.edu.vn/tin-tuc-su-kien/hoi-nghi-ra-soat-dam-bao-hieu-qua-mo-hinh-cong-truong-an-toan-giao-thong-tren-dia-ban-thanh-pho-bac-ninh.html">Hoạt động ngoại khóa</a></h3>
+                    <p>Hội nghị rà soát việc thực hiện an toàn giao thông ở các trường học...</p>
+                </article>
+
+                <article class="news-item">
+                    <img src="https://thptluongtai.bacninh.edu.vn/upload/45610/fck/sgdbacninh/2024_03_14_07_16_161.jpg" alt="Tin tức 3">
+                    <h3><a href="https://thptluongtai.bacninh.edu.vn/tin-tuc-su-kien/hoi-nghi-ra-soat-dam-bao-hieu-qua-mo-hinh-cong-truong-an-toan-giao-thong-tren-dia-ban-thanh-pho-bac-ninh.html">Hoạt động ngoại khóa</a></h3>
+                    <p>Hội nghị rà soát việc thực hiện an toàn giao thông ở các trường học...</p>
+                </article>
+
+                <article class="news-item">
+                    <img src="https://thptluongtai.bacninh.edu.vn/upload/45610/fck/sgdbacninh/2024_03_14_07_16_161.jpg" alt="Tin tức 3">
+                    <h3><a href="https://thptluongtai.bacninh.edu.vn/tin-tuc-su-kien/hoi-nghi-ra-soat-dam-bao-hieu-qua-mo-hinh-cong-truong-an-toan-giao-thong-tren-dia-ban-thanh-pho-bac-ninh.html">Hoạt động ngoại khóa</a></h3>
+                    <p>Hội nghị rà soát việc thực hiện an toàn giao thông ở các trường học...</p>
+                </article>
+                
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Trường THPT - Trang tin tức.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

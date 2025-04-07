@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liên hệ - Trường THPT Lương Tài</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        h2 {
+            text-align: center;
+            color: #0073e6;
+        }
+        .contact-info {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .contact-info p {
+            font-size: 18px;
+            margin: 5px 0;
+        }
+        .contact-form {
+            max-width: 600px;
+            margin: auto;
+        }
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .contact-form button {
+            background: #0073e6;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            width: 100%;
+        }
+        .contact-form button:hover {
+            background: #005bb5;
+        }
+        iframe {
+            width: 100%;
+            height: 300px;
+            border: none;
+            margin-top: 20px;
+        }
+
+        .popup {
+            display: none; 
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .popup-content {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            position: relative;
+            animation: popUp 0.3s ease-in-out;
+        }
+        
+        .popup-img {
+            width: 300px; 
+            border-radius: 8px;
+        }
+        
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 30px;
+            cursor: pointer;
+            color: red;
+        }
+        
+        @keyframes popUp {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <a href="index.html" style="text-decoration: none; color: cyan;"><h2>Liên hệ với chúng tôi</h2> </a>
+        <div class="contact-info">
+            <p><strong>Địa chỉ:</strong> T.T Thứa, Lương Tài, Bắc Ninh</p>
+            <p><strong>Số điện thoại:</strong> 0966771508</p>
+            <p><strong>Email:</strong> c3luongtai@bacninh.edu.vn</p>
+        </div>
+        <div class="contact-form">
+            <h3>Gửi tin nhắn</h3>
+            <form>
+                <input type="text" placeholder="Họ và tên" required>
+                <input type="email" placeholder="Email" required>
+                <textarea placeholder="Nội dung tin nhắn" rows="5" required></textarea>
+                <button type="submit">Gửi</button>
+            </form>
+        </div>
+        <h3>Bản đồ</h3>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.457774204929!2d106.2006619!3d21.0143617!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31359fbcd9586a15%3A0xe4ae281847c9e07!2zVHLGsOG7nW5nIFRIUFQgTMawxqFuZyBUw6Bp!5e0!3m2!1svi!2s!4v1741446359252!5m2!1svi!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+<div id="thankYouPopup" class="popup">
+    <div class="popup-content">
+        <span class="close-btn">&times;</span>
+        <img src="hoctruong.jpg" alt="Cảm ơn bạn!" class="popup-img">
+    </div>
+</div>
+        
+<script>
+    document.querySelector(".contact-form form").addEventListener("submit", function(event) {
+        event.preventDefault();
+    
+        document.getElementById("thankYouPopup").style.display = "flex";
+
+        this.reset();
+    });
+
+    document.querySelector(".close-btn").addEventListener("click", function() {
+        document.getElementById("thankYouPopup").style.display = "none";
+    });
+
+    window.addEventListener("click", function(event) {
+        let popup = document.getElementById("thankYouPopup");
+        if (event.target === popup) {
+            popup.style.display = "none";
+        }
+    });
+</script>
+<!--lỗi rồi-->
+<script>
+    document.getElementById("contactForm").addEventListener("submit", function(event) {
+        event.preventDefault();  
+
+        let formData = new FormData();
+        formData.append("name", document.getElementById("name").value);
+        formData.append("email", document.getElementById("email").value);
+        formData.append("message", document.getElementById("message").value);
+
+        fetch("https://script.google.com/macros/s/AKfycbxdIs6uunP5E_x68i5dwyVvd5sIrYrod3T5s71NeQ7neL9L1AzUClDkQw8GuMOL3-FdLg/exec", {
+            method: "POST",
+            body: formData
+        }).then(response => response.text())
+        .then(result => {
+            if (result === "success") {
+                alert("Gửi thành công!");
+                document.getElementById("contactForm").reset();
+            } else {
+                alert("Lỗi! Hãy thử lại.");
+            }
+        });
+    });
+</script>
+
+
+</body>
+</html>
